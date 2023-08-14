@@ -7,7 +7,7 @@ export default {
         xs: '320px',
         sm: '375px',
         sml: '500px',
-        md: '667px',
+        md: '700px',
         mdl: '900px',
         lgl: '1024px',
         xl: '1280px',
