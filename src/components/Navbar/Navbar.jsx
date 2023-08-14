@@ -9,7 +9,6 @@ import { getMovies, getShows } from '../ReduxStore/MovieSlice';
 
 const Navbar = () => {
   const [name, setName] = useState('');
-  console.log(name, 'this is name');
   const dispatch = useDispatch();
   const handlerSubmit = (e) => {
     e.preventDefault();
@@ -20,14 +19,15 @@ const Navbar = () => {
       setName('');
     }
   };
-  const Movies = async (movieName) => {
+
+  const Movies = async (name) => {
     try {
       dispatch(showLoading());
       const response1 = await BaseUrl.get(
-        `?apikey=${apiKey}&s=${movieName ?? 'fighting'}&type=movie`
+        `?apikey=${apiKey}&s=${name ?? 'fighting'}&type=movie`
       );
       const response2 = await BaseUrl.get(
-        `?apikey=${apiKey}&s=${movieName ?? 'love'}&type=series`
+        `?apikey=${apiKey}&s=${name ?? 'love'}&type=series`
       );
       const movieData = response1.data;
       const showData = response2.data;
@@ -51,7 +51,7 @@ const Navbar = () => {
         {/* Search bar */}
         <form
           onSubmit={handlerSubmit}
-          className="flex items-center justify-center w-full mdl:w-auto  h-[50px]"
+          className="flex items-center justify-center w-full mdl:w-auto  h-[40px]"
         >
           <div className="group h-full w-[500px]">
             <input

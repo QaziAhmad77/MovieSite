@@ -7,12 +7,17 @@ import Heading from '../Home/heading';
 const MovieListing = () => {
   const { movies } = useSelector((state) => state.movies);
   const { shows } = useSelector((state) => state.movies);
-  console.log(movies, 'moviesssss');
   const getMovie =
     movies.Response === 'True' ? (
       movies.Search.map((item) => {
         return (
-          <MovieCard poster={item.Poster} title={item.Title} year={item.Year} />
+          <MovieCard
+            key={item.imdbID}
+            poster={item.Poster}
+            title={item.Title}
+            year={item.Year}
+            imdbID={item.imdbID}
+          />
         );
       })
     ) : (
@@ -22,7 +27,13 @@ const MovieListing = () => {
     shows.Response === 'True' ? (
       shows.Search.map((item) => {
         return (
-          <MovieCard poster={item.Poster} title={item.Title} year={item.Year} />
+          <MovieCard
+            key={item.imdbID}
+            poster={item.Poster}
+            title={item.Title}
+            year={item.Year}
+            imdbID={item.imdbID}
+          />
         );
       })
     ) : (
