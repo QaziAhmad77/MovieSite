@@ -16,6 +16,7 @@ export default {
         bodyColor: '#212428',
         lightText: '#c4cfde',
         searchBg: '#edeffb',
+        cardDetail: "#262626"
       },
     },
   },

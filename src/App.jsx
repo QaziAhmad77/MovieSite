@@ -6,8 +6,6 @@ import { Route, Routes } from 'react-router-dom';
 import MovieDetail from './components/MovieDetail/MovieDetail';
 
 function App() {
-  const { isLoading } = useSelector((state) => state.alert);
-  console.log(isLoading);
   return (
     <>
       <div className="bg-blue-500 w-full h-auto text-lightText -z-20">
@@ -18,13 +16,13 @@ function App() {
             element={
               <>
                 {/* Main Content */}
-                <main className="my-0 mx-12 mb-[50px]">
+                <main className="my-0 w-full h-auto mb-[50px]">
                   <Home />
                 </main>
               </>
             }
           />
-          <Route path="/movieDetail/:imdbID" element={<MovieDetail />} />
+          {/* <Route path="/movieDetail/:imdbID" element={<MovieDetail />} /> */}
         </Routes>
         <Footer />
       </div>

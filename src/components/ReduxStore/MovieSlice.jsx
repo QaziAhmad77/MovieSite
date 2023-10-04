@@ -4,6 +4,7 @@ const initialState = {
   movies: {},
   shows: {},
   movieDetail: {},
+  showDetail: false,
 };
 
 export const movieSlice = createSlice({
@@ -19,8 +20,12 @@ export const movieSlice = createSlice({
     getMovieDetail: (state, action) => {
       state.movieDetail = action.payload;
     },
+    clickFunction: (state, action) => {
+      state.showDetail = action.payload;
+    },
   },
 });
 
-export const { getMovies, getShows, getMovieDetail } = movieSlice.actions;
+export const { getMovies, getShows, getMovieDetail, clickFunction } =
+  movieSlice.actions;
 export default movieSlice.reducer;
