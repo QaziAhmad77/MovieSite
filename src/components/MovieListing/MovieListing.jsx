@@ -15,11 +15,8 @@ const MovieListing = () => {
   const { movies } = useSelector((state) => state.movies);
   const { shows } = useSelector((state) => state.movies);
   const { showDetail } = useSelector((state) => state.movies);
-  console.log(showDetail, 'shoeeeeeeeeeeeeeeeee');
 
-  console.log(movieDetail, 'hooooo');
   const openModalMovie = (id) => {
-    console.log('da ymmmmm');
     getDetail(id);
   };
   const getDetail = async (imdbID) => {
@@ -35,7 +32,6 @@ const MovieListing = () => {
       console.log(error, 'Something went wrong');
     }
   };
-  console.log(showDetail, 'show detail');
   const getMovie =
     movies.Response === 'True' ? (
       movies.Search.map((item) => {
